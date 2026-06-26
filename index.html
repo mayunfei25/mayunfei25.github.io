@@ -39,7 +39,7 @@
         </ul>
 
         <p class="photo-note">
-          Photo: upload <code>assets/profile.jpg</code>. Adjust crop in <code>styles.css</code>.
+          Photo: upload <code>assets/profile.jpg</code>. Open <code>?edit=1</code> to adjust crop.
         </p>
       </div>
     </aside>
@@ -283,5 +283,43 @@
       </footer>
     </main>
   </div>
+
+  <div id="cropEditor" class="crop-editor" aria-live="polite">
+    <div class="crop-editor-header">
+      <strong>Photo crop editor</strong>
+      <button type="button" id="closeCropEditor">×</button>
+    </div>
+
+    <p class="crop-editor-help">
+      Drag sliders until the portrait looks right. Then copy the CSS values into <code>styles.css</code>.
+    </p>
+
+    <label>
+      Left / right
+      <input id="cropX" type="range" min="0" max="100" step="1" value="50" />
+      <span id="cropXValue">50%</span>
+    </label>
+
+    <label>
+      Up / down
+      <input id="cropY" type="range" min="0" max="100" step="1" value="38" />
+      <span id="cropYValue">38%</span>
+    </label>
+
+    <label>
+      Zoom
+      <input id="cropScale" type="range" min="1" max="2" step="0.01" value="1.10" />
+      <span id="cropScaleValue">1.10</span>
+    </label>
+
+    <div class="crop-editor-actions">
+      <button type="button" id="copyCropCss">Copy CSS</button>
+      <button type="button" id="resetCrop">Reset</button>
+    </div>
+
+    <textarea id="cropCssOutput" readonly></textarea>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -13,6 +13,11 @@
   --accent-bg: #f2f6ff;
   --accent-line: #cddbf7;
   --max-width: 1180px;
+
+  /* Default portrait crop. You can replace these after using ?edit=1. */
+  --portrait-x: 50%;
+  --portrait-y: 38%;
+  --portrait-scale: 1.10;
 }
 
 html {
@@ -78,12 +83,6 @@ code {
   background: #ffffff;
 }
 
-/*
-  Photo crop controls:
-  1. Upload your photo as assets/profile.jpg.
-  2. If the face is too high/low/left/right, adjust object-position.
-  3. If the photo is too far/close, adjust scale().
-*/
 .portrait {
   position: relative;
   z-index: 2;
@@ -91,11 +90,9 @@ code {
   height: 100%;
   display: block;
   object-fit: cover;
-
-  /* Crop adjustment area */
-  object-position: 30% 38%;
-  transform: scale(0.10);
-  transform-origin: 50% 38%;
+  object-position: var(--portrait-x) var(--portrait-y);
+  transform: scale(var(--portrait-scale));
+  transform-origin: var(--portrait-x) var(--portrait-y);
 }
 
 .portrait-fallback {
@@ -277,6 +274,88 @@ li {
   font-size: 0.95rem;
 }
 
+/* Interactive crop editor. It only appears when the URL contains ?edit=1. */
+.crop-editor {
+  display: none;
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999;
+  width: min(360px, calc(100vw - 44px));
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
+  padding: 16px;
+}
+
+.crop-editor.is-visible {
+  display: block;
+}
+
+.crop-editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.crop-editor-header button {
+  border: 0;
+  background: #f0f0f0;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.crop-editor-help {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 10px 0 14px;
+}
+
+.crop-editor label {
+  display: grid;
+  grid-template-columns: 88px 1fr 48px;
+  gap: 10px;
+  align-items: center;
+  margin: 12px 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.crop-editor input[type="range"] {
+  width: 100%;
+}
+
+.crop-editor-actions {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0 10px;
+}
+
+.crop-editor-actions button {
+  border: 1px solid var(--line);
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.crop-editor textarea {
+  width: 100%;
+  min-height: 92px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.82rem;
+  color: var(--text);
+}
+
 @media (max-width: 860px) {
   .page {
     display: block;
@@ -310,5 +389,11 @@ li {
 
   .interest-grid {
     grid-template-columns: 1fr;
+  }
+
+  .crop-editor {
+    right: 12px;
+    bottom: 12px;
+    width: calc(100vw - 24px);
   }
 }
