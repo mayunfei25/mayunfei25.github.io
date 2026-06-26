@@ -93,7 +93,7 @@ code {
   object-fit: cover;
 
   /* Crop adjustment area */
-  object-position: 50% 38%;
+  object-position: 30% 38%;
   transform: scale(1.10);
   transform-origin: 50% 38%;
 }
