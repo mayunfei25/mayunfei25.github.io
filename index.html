@@ -12,9 +12,10 @@
   <div class="page">
     <aside class="sidebar">
       <div class="profile">
-        <div class="portrait-frame" aria-label="Yunfei Ma portrait">
+        <div class="portrait-frame" id="portraitFrame" aria-label="Yunfei Ma portrait">
           <img
             class="portrait"
+            id="portraitImage"
             src="assets/profile.jpg"
             alt="Yunfei Ma portrait"
             onerror="this.style.display='none';"
@@ -39,7 +40,7 @@
         </ul>
 
         <p class="photo-note">
-          Photo: upload <code>assets/profile.jpg</code>. Open <code>?edit=1</code> to adjust crop.
+          Photo: upload <code>assets/profile.jpg</code>. Open <code>?edit=1</code> to drag and crop.
         </p>
       </div>
     </aside>
@@ -286,38 +287,42 @@
 
   <div id="cropEditor" class="crop-editor" aria-live="polite">
     <div class="crop-editor-header">
-      <strong>Photo crop editor</strong>
-      <button type="button" id="closeCropEditor">×</button>
+      <strong>Realtime portrait editor</strong>
+      <button type="button" id="closeCropEditor" aria-label="Close editor">×</button>
     </div>
 
     <p class="crop-editor-help">
-      Drag sliders until the portrait looks right. Then copy the CSS values into <code>styles.css</code>.
+      Drag the portrait directly, or use sliders. This preview updates immediately in your browser.
     </p>
 
     <label>
-      Left / right
-      <input id="cropX" type="range" min="0" max="100" step="1" value="50" />
-      <span id="cropXValue">50%</span>
+      Move X
+      <input id="cropX" type="range" min="-120" max="120" step="1" value="0" />
+      <span id="cropXValue">0px</span>
     </label>
 
     <label>
-      Up / down
-      <input id="cropY" type="range" min="0" max="100" step="1" value="38" />
-      <span id="cropYValue">38%</span>
+      Move Y
+      <input id="cropY" type="range" min="-120" max="120" step="1" value="0" />
+      <span id="cropYValue">0px</span>
     </label>
 
     <label>
       Zoom
-      <input id="cropScale" type="range" min="1" max="2" step="0.01" value="1.10" />
-      <span id="cropScaleValue">1.10</span>
+      <input id="cropScale" type="range" min="1" max="2.5" step="0.01" value="1.15" />
+      <span id="cropScaleValue">1.15</span>
     </label>
 
     <div class="crop-editor-actions">
-      <button type="button" id="copyCropCss">Copy CSS</button>
+      <button type="button" id="copyCropCss">Copy final CSS</button>
       <button type="button" id="resetCrop">Reset</button>
     </div>
 
     <textarea id="cropCssOutput" readonly></textarea>
+
+    <p class="crop-editor-help small">
+      To make it public, paste the copied variables into the <code>:root</code> block in <code>styles.css</code>.
+    </p>
   </div>
 
   <script src="script.js"></script>

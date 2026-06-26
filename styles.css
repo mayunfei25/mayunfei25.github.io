@@ -14,10 +14,14 @@
   --accent-line: #cddbf7;
   --max-width: 1180px;
 
-  /* Default portrait crop. You can replace these after using ?edit=1. */
-  --portrait-x: 50%;
-  --portrait-y: 38%;
-  --portrait-scale: 1.10;
+  /*
+    Portrait crop variables.
+    Use https://mayunfei25.github.io/?edit=1 to adjust visually,
+    then replace these three values.
+  */
+  --portrait-move-x: 0px;
+  --portrait-move-y: 0px;
+  --portrait-scale: 1.15;
 }
 
 html {
@@ -83,16 +87,32 @@ code {
   background: #ffffff;
 }
 
+.portrait-frame.editing {
+  outline: 3px solid rgba(42, 93, 176, 0.25);
+  cursor: grab;
+}
+
+.portrait-frame.editing:active {
+  cursor: grabbing;
+}
+
 .portrait {
-  position: relative;
+  position: absolute;
   z-index: 2;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
+  max-width: none;
   display: block;
   object-fit: cover;
-  object-position: var(--portrait-x) var(--portrait-y);
-  transform: scale(var(--portrait-scale));
-  transform-origin: var(--portrait-x) var(--portrait-y);
+  user-select: none;
+  -webkit-user-drag: none;
+  transform:
+    translate(-50%, -50%)
+    translate(var(--portrait-move-x), var(--portrait-move-y))
+    scale(var(--portrait-scale));
+  transform-origin: center center;
 }
 
 .portrait-fallback {
@@ -274,14 +294,14 @@ li {
   font-size: 0.95rem;
 }
 
-/* Interactive crop editor. It only appears when the URL contains ?edit=1. */
+/* Realtime crop editor. It appears only when the URL contains ?edit=1. */
 .crop-editor {
   display: none;
   position: fixed;
   right: 22px;
   bottom: 22px;
   z-index: 9999;
-  width: min(360px, calc(100vw - 44px));
+  width: min(380px, calc(100vw - 44px));
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -316,9 +336,14 @@ li {
   margin: 10px 0 14px;
 }
 
+.crop-editor-help.small {
+  font-size: 0.82rem;
+  margin-bottom: 0;
+}
+
 .crop-editor label {
   display: grid;
-  grid-template-columns: 88px 1fr 48px;
+  grid-template-columns: 72px 1fr 54px;
   gap: 10px;
   align-items: center;
   margin: 12px 0;
