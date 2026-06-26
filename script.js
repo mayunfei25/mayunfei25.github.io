@@ -16,9 +16,9 @@ const copyButton = document.getElementById("copyCropCss");
 const resetButton = document.getElementById("resetCrop");
 
 const defaultCrop = {
-  x: 0,
-  y: 0,
-  scale: 1.20
+  x: 2,
+  y: -7,
+  scale: 1.09
 };
 
 let isEditMode = false;
@@ -68,7 +68,7 @@ function makeCss(x, y, scale) {
 
 function getSavedCrop() {
   try {
-    const saved = JSON.parse(localStorage.getItem("portraitCropRealtimeV6"));
+    const saved = JSON.parse(localStorage.getItem("portraitCropPlainV7"));
     if (!saved) return defaultCrop;
     return {
       x: Number(saved.x ?? defaultCrop.x),
@@ -100,7 +100,7 @@ function applyCrop(x, y, scale, save = true) {
   output.value = makeCss(x, y, scale);
 
   if (save) {
-    localStorage.setItem("portraitCropRealtimeV6", JSON.stringify({ x, y, scale: Number(scale) }));
+    localStorage.setItem("portraitCropPlainV7", JSON.stringify({ x, y, scale: Number(scale) }));
   }
 }
 
@@ -176,7 +176,7 @@ if (frame) {
 }
 
 resetButton.addEventListener("click", () => {
-  localStorage.removeItem("portraitCropRealtimeV6");
+  localStorage.removeItem("portraitCropPlainV7");
   applyCrop(defaultCrop.x, defaultCrop.y, defaultCrop.scale, false);
 });
 
