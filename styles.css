@@ -94,7 +94,7 @@ code {
 
   /* Crop adjustment area */
   object-position: 30% 38%;
-  transform: scale(1.10);
+  transform: scale(1.00);
   transform-origin: 50% 38%;
 }
 
