@@ -18,13 +18,37 @@ const resetButton = document.getElementById("resetCrop");
 const defaultCrop = {
   x: 0,
   y: 0,
-  scale: 1.15
+  scale: 1.20
 };
 
 let isEditMode = false;
 let isDragging = false;
 let dragStart = { x: 0, y: 0 };
 let cropStart = { x: 0, y: 0 };
+
+function classifyImageAspect() {
+  if (!image || !image.naturalWidth || !image.naturalHeight) return;
+
+  image.classList.remove("is-landscape", "is-portrait", "is-square");
+
+  const ratio = image.naturalWidth / image.naturalHeight;
+
+  if (ratio > 1.05) {
+    image.classList.add("is-landscape");
+  } else if (ratio < 0.95) {
+    image.classList.add("is-portrait");
+  } else {
+    image.classList.add("is-square");
+  }
+}
+
+if (image) {
+  if (image.complete) {
+    classifyImageAspect();
+  } else {
+    image.addEventListener("load", classifyImageAspect);
+  }
+}
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -44,7 +68,7 @@ function makeCss(x, y, scale) {
 
 function getSavedCrop() {
   try {
-    const saved = JSON.parse(localStorage.getItem("portraitCropRealtime"));
+    const saved = JSON.parse(localStorage.getItem("portraitCropRealtimeV5"));
     if (!saved) return defaultCrop;
     return {
       x: Number(saved.x ?? defaultCrop.x),
@@ -57,9 +81,9 @@ function getSavedCrop() {
 }
 
 function applyCrop(x, y, scale, save = true) {
-  x = clamp(Math.round(Number(x)), -120, 120);
-  y = clamp(Math.round(Number(y)), -120, 120);
-  scale = clamp(Number(scale), 1, 2.5);
+  x = clamp(Math.round(Number(x)), -220, 220);
+  y = clamp(Math.round(Number(y)), -220, 220);
+  scale = clamp(Number(scale), 1, 3);
 
   document.documentElement.style.setProperty("--portrait-move-x", `${x}px`);
   document.documentElement.style.setProperty("--portrait-move-y", `${y}px`);
@@ -76,7 +100,7 @@ function applyCrop(x, y, scale, save = true) {
   output.value = makeCss(x, y, scale);
 
   if (save) {
-    localStorage.setItem("portraitCropRealtime", JSON.stringify({ x, y, scale: Number(scale) }));
+    localStorage.setItem("portraitCropRealtimeV5", JSON.stringify({ x, y, scale: Number(scale) }));
   }
 }
 
@@ -146,13 +170,13 @@ if (frame) {
 
     event.preventDefault();
     const { x, y, scale } = currentCropValues();
-    const nextScale = scale + (event.deltaY < 0 ? 0.03 : -0.03);
+    const nextScale = scale + (event.deltaY < 0 ? 0.04 : -0.04);
     applyCrop(x, y, nextScale);
   }, { passive: false });
 }
 
 resetButton.addEventListener("click", () => {
-  localStorage.removeItem("portraitCropRealtime");
+  localStorage.removeItem("portraitCropRealtimeV5");
   applyCrop(defaultCrop.x, defaultCrop.y, defaultCrop.scale, false);
 });
 

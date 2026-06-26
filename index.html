@@ -292,25 +292,25 @@
     </div>
 
     <p class="crop-editor-help">
-      Drag the portrait directly, or use sliders. This preview updates immediately in your browser.
+      Drag the portrait directly. Use the mouse wheel or slider to zoom.
     </p>
 
     <label>
       Move X
-      <input id="cropX" type="range" min="-120" max="120" step="1" value="0" />
+      <input id="cropX" type="range" min="-220" max="220" step="1" value="0" />
       <span id="cropXValue">0px</span>
     </label>
 
     <label>
       Move Y
-      <input id="cropY" type="range" min="-120" max="120" step="1" value="0" />
+      <input id="cropY" type="range" min="-220" max="220" step="1" value="0" />
       <span id="cropYValue">0px</span>
     </label>
 
     <label>
       Zoom
-      <input id="cropScale" type="range" min="1" max="2.5" step="0.01" value="1.15" />
-      <span id="cropScaleValue">1.15</span>
+      <input id="cropScale" type="range" min="1" max="3" step="0.01" value="1.20" />
+      <span id="cropScaleValue">1.20</span>
     </label>
 
     <div class="crop-editor-actions">
@@ -321,7 +321,7 @@
     <textarea id="cropCssOutput" readonly></textarea>
 
     <p class="crop-editor-help small">
-      To make it public, paste the copied variables into the <code>:root</code> block in <code>styles.css</code>.
+      Paste the copied variables into the <code>:root</code> block in <code>styles.css</code>, then commit.
     </p>
   </div>
 
