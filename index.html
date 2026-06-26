@@ -9,9 +9,11 @@
 </head>
 
 <body>
+  <div class="site-bg" aria-hidden="true"></div>
+
   <div class="page">
     <aside class="sidebar">
-      <div class="profile">
+      <div class="profile-card">
         <div class="portrait-frame" id="portraitFrame" aria-label="Yunfei Ma portrait">
           <img
             class="portrait"
@@ -26,9 +28,16 @@
         <h1>Yunfei Ma</h1>
         <p class="name-cn">马云飞</p>
         <p class="role">
-          PhD Student<br />
-          Tsinghua SIGS
+          PhD Student · Tsinghua SIGS<br />
+          Urban Sensing · GeoAI · Environmental AI
         </p>
+
+        <div class="tag-cloud compact">
+          <span>Urban AI</span>
+          <span>GeoAI</span>
+          <span>Noise Prediction</span>
+          <span>Social Sensing</span>
+        </div>
 
         <ul class="profile-list">
           <li>📍 Shenzhen, China</li>
@@ -40,7 +49,7 @@
         </ul>
 
         <p class="photo-note">
-          Photo: upload <code>assets/profile.jpg</code>. Open <code>?edit=1</code> to drag and crop.
+          Open <code>?edit=1</code> to drag and crop the portrait.
         </p>
       </div>
     </aside>
@@ -55,9 +64,10 @@
         <a href="#awards">Awards</a>
       </nav>
 
-      <section id="about" class="section">
-        <h2>About me</h2>
-        <p>
+      <section id="about" class="hero section">
+        <p class="eyebrow">Academic homepage</p>
+        <h2>Hi, I’m Yunfei — I study cities through data, images, language, and spatial intelligence.</h2>
+        <p class="hero-text">
           I am <strong>Yunfei Ma</strong> (马云飞), a PhD student at
           <strong>Tsinghua University Shenzhen International Graduate School</strong>.
           My research lies at the intersection of urban science, GIS, urban big data analytics,
@@ -70,78 +80,112 @@
           satellite-based urban noise prediction, GeoAI, and hybrid quantum-classical machine learning for
           small-sample urban environmental prediction.
         </p>
-        <p>
-          I aim to develop spatially aware, interpretable, and human-centered computational methods
-          for understanding urban environments and supporting urban planning and governance.
-        </p>
+
+        <div class="quick-stats">
+          <div>
+            <strong>Urban sensing</strong>
+            <span>social sensing · visual intelligence · spatial analytics</span>
+          </div>
+          <div>
+            <strong>Current focus</strong>
+            <span>satellite-based urban noise prediction</span>
+          </div>
+          <div>
+            <strong>Methods</strong>
+            <span>GeoAI · ML · text mining · QML benchmarks</span>
+          </div>
+        </div>
       </section>
 
       <section id="news" class="section">
-        <h2>Recent news</h2>
+        <div class="section-heading">
+          <p class="eyebrow">Updates</p>
+          <h2>Recent news</h2>
+        </div>
         <ul class="news-list">
-          <li><span>2026</span> Joined Tsinghua University Shenzhen International Graduate School as a PhD student.</li>
-          <li><span>2026</span> Building multi-city benchmarks for visual urban noise prediction and GeoAI-based urban sensing.</li>
-          <li><span>2025</span> Published the Huaqiangbei vague-region study in <em>Cartography and Geographic Information Science</em>.</li>
-          <li><span>2023</span> Presented related work on Huaqiangbei business district cognition at GSCS &amp; ICUI 2023.</li>
+          <li><span>2026</span> <p>Joined Tsinghua University Shenzhen International Graduate School as a PhD student.</p></li>
+          <li><span>2026</span> <p>Building multi-city benchmarks for visual urban noise prediction and GeoAI-based urban sensing.</p></li>
+          <li><span>2025</span> <p>Published the Huaqiangbei vague-region study in <em>Cartography and Geographic Information Science</em>.</p></li>
+          <li><span>2023</span> <p>Presented related work on Huaqiangbei business district cognition at GSCS &amp; ICUI 2023.</p></li>
         </ul>
       </section>
 
       <section id="research" class="section">
-        <h2>Research interests</h2>
+        <div class="section-heading">
+          <p class="eyebrow">Research</p>
+          <h2>Research interests</h2>
+        </div>
+
         <div class="interest-grid">
-          <div>
-            <h3>Urban sensing &amp; GeoAI</h3>
-            <p>Urban big data analytics, social sensing, spatial data science, and interpretable spatial modeling.</p>
-          </div>
-          <div>
+          <article>
+            <div class="icon">🛰️</div>
             <h3>Visual urban intelligence</h3>
             <p>Satellite imagery, street-level imagery, urban morphology, and visual proxies for urban environmental quality.</p>
-          </div>
-          <div>
+          </article>
+
+          <article>
+            <div class="icon">🧭</div>
+            <h3>Urban sensing &amp; GeoAI</h3>
+            <p>Urban big data analytics, social sensing, spatial data science, and interpretable spatial modeling.</p>
+          </article>
+
+          <article>
+            <div class="icon">🔊</div>
             <h3>Urban noise prediction</h3>
             <p>Spatially robust modeling of urban sound environments using visual and geospatial data.</p>
-          </div>
-          <div>
+          </article>
+
+          <article>
+            <div class="icon">⚛️</div>
             <h3>Hybrid quantum-classical learning</h3>
             <p>Evaluating quantum kernel methods and matched classical baselines for small-sample urban prediction tasks.</p>
-          </div>
+          </article>
         </div>
       </section>
 
       <section id="education" class="section">
-        <h2>Education</h2>
-
-        <div class="entry">
-          <div class="entry-main">
-            <h3>Tsinghua University Shenzhen International Graduate School</h3>
-            <p>PhD Student, Future Human Habitats</p>
-          </div>
-          <div class="entry-date">2026–Present</div>
+        <div class="section-heading">
+          <p class="eyebrow">Background</p>
+          <h2>Education</h2>
         </div>
 
-        <div class="entry">
-          <div class="entry-main">
-            <h3>Harbin Institute of Technology, Shenzhen</h3>
-            <p>Master in Urban Planning</p>
-            <p class="muted">GPA: 3.428 / 4.00, Rank: 4 / 33</p>
+        <div class="timeline">
+          <div class="entry">
+            <div class="entry-date">2026–Present</div>
+            <div class="entry-main">
+              <h3>Tsinghua University Shenzhen International Graduate School</h3>
+              <p>PhD Student, Future Human Habitats</p>
+            </div>
           </div>
-          <div class="entry-date">2022–2026</div>
-        </div>
 
-        <div class="entry">
-          <div class="entry-main">
-            <h3>Changsha University of Science and Technology</h3>
-            <p>Bachelor in Urban and Rural Planning</p>
-            <p class="muted">GPA: 3.67 / 4.00, Rank: 1 / 26</p>
+          <div class="entry">
+            <div class="entry-date">2022–2026</div>
+            <div class="entry-main">
+              <h3>Harbin Institute of Technology, Shenzhen</h3>
+              <p>Master in Urban Planning</p>
+              <p class="muted">GPA: 3.428 / 4.00, Rank: 4 / 33</p>
+            </div>
           </div>
-          <div class="entry-date">2017–2022</div>
+
+          <div class="entry">
+            <div class="entry-date">2017–2022</div>
+            <div class="entry-main">
+              <h3>Changsha University of Science and Technology</h3>
+              <p>Bachelor in Urban and Rural Planning</p>
+              <p class="muted">GPA: 3.67 / 4.00, Rank: 1 / 26</p>
+            </div>
+          </div>
         </div>
       </section>
 
       <section id="publications" class="section">
-        <h2>Publications</h2>
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2>Publications</h2>
+        </div>
 
         <article class="publication featured">
+          <div class="paper-badge">Published · 2025</div>
           <h3>
             Where is Huaqiangbei? Identifying the evolutional vague region of urban business district using
             toponym co-occurrence on web pages with multiple time series
@@ -150,7 +194,7 @@
             <strong>Yunfei Ma</strong>, Yuan Zhang, Fahui Wang, Jie He, Yongxi Gong*, Yu Liu
           </p>
           <p class="venue">
-            <em>Cartography and Geographic Information Science</em>, 2025. Published.
+            <em>Cartography and Geographic Information Science</em>, 2025.
           </p>
           <p>
             This paper identifies the evolutional vague region of Huaqiangbei business district using
@@ -161,84 +205,95 @@
           </p>
         </article>
 
-        <article class="publication">
-          <h3>
-            Assessment of the comprehensive disaster risk in rural areas based on multi-model comparison:
-            A case study of Huayuan County, Hunan Province
-          </h3>
-          <p class="authors">Fang Zou*, <strong>Yunfei Ma</strong>, Yingling Hu</p>
-          <p class="venue"><em>Remote Sensing for Natural Resources</em>, 2022. CSCD, PKU Core, in Chinese.</p>
-        </article>
+        <div class="publication-list">
+          <article class="publication">
+            <h3>
+              Assessment of the comprehensive disaster risk in rural areas based on multi-model comparison:
+              A case study of Huayuan County, Hunan Province
+            </h3>
+            <p class="authors">Fang Zou*, <strong>Yunfei Ma</strong>, Yingling Hu</p>
+            <p class="venue"><em>Remote Sensing for Natural Resources</em>, 2022. CSCD, PKU Core, in Chinese.</p>
+          </article>
 
-        <article class="publication">
-          <h3>
-            Analysis of the current situation and optimization of urban pedestrian system based on spatial syntax:
-            Taking Changsha West Labor Road to South Second Ring Road as an example
-          </h3>
-          <p class="authors"><strong>Yunfei Ma*</strong>, Xi Ye, Haoyu Wang</p>
-          <p class="venue">Proceedings of the Annual Conference on Urban Planning in China, 2021. In Chinese.</p>
-        </article>
+          <article class="publication">
+            <h3>
+              Analysis of the current situation and optimization of urban pedestrian system based on spatial syntax:
+              Taking Changsha West Labor Road to South Second Ring Road as an example
+            </h3>
+            <p class="authors"><strong>Yunfei Ma*</strong>, Xi Ye, Haoyu Wang</p>
+            <p class="venue">Proceedings of the Annual Conference on Urban Planning in China, 2021. In Chinese.</p>
+          </article>
 
-        <article class="publication">
-          <h3>A study of pedestrian space in new and old university campuses based on spatial syntax</h3>
-          <p class="authors">Xi Ye*, <strong>Yunfei Ma</strong>, Haoyu Wang</p>
-          <p class="venue">Proceedings of the Annual Conference on Urban Planning in China, 2021. In Chinese.</p>
-        </article>
+          <article class="publication">
+            <h3>A study of pedestrian space in new and old university campuses based on spatial syntax</h3>
+            <p class="authors">Xi Ye*, <strong>Yunfei Ma</strong>, Haoyu Wang</p>
+            <p class="venue">Proceedings of the Annual Conference on Urban Planning in China, 2021. In Chinese.</p>
+          </article>
 
-        <article class="publication">
-          <h3>Land space control of Hengdong County based on geological hazard risk assessment</h3>
-          <p class="authors"><strong>Yunfei Ma</strong>, Fang Zou*, Haiyan Xu</p>
-          <p class="venue"><em>Geomatics World</em>, 2020. ISTIC, in Chinese.</p>
-        </article>
+          <article class="publication">
+            <h3>Land space control of Hengdong County based on geological hazard risk assessment</h3>
+            <p class="authors"><strong>Yunfei Ma</strong>, Fang Zou*, Haiyan Xu</p>
+            <p class="venue"><em>Geomatics World</em>, 2020. ISTIC, in Chinese.</p>
+          </article>
+        </div>
       </section>
 
       <section id="projects" class="section">
-        <h2>Selected research projects</h2>
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2>Selected research projects</h2>
+        </div>
 
-        <article class="project">
-          <h3>Identifying cognitive regions of urban business districts using toponym co-occurrence</h3>
-          <p>
-            Proposed a framework for delineating vague urban business district regions using toponym co-occurrence
-            from web pages, with methods including DBSCAN, KDE, fuzzy set analysis, and TF-IDF-based semantic interpretation.
-          </p>
-        </article>
+        <div class="project-grid">
+          <article class="project">
+            <h3>Identifying cognitive regions of urban business districts</h3>
+            <p>
+              Delineating vague urban business district regions using toponym co-occurrence from web pages,
+              DBSCAN, KDE, fuzzy set analysis, and TF-IDF-based semantic interpretation.
+            </p>
+          </article>
 
-        <article class="project">
-          <h3>Urban space performance assessment using mobile phone signaling data</h3>
-          <p>
-            Used intra-urban spatial interaction intensity derived from mobile phone signaling trajectories to assess
-            urban space performance, supported by reverse gravity modeling, random forest, and SHAP-based interpretation.
-          </p>
-        </article>
+          <article class="project">
+            <h3>Urban space performance assessment</h3>
+            <p>
+              Using mobile phone signaling trajectories, reverse gravity modeling, random forest,
+              and SHAP-based interpretation to assess urban space performance.
+            </p>
+          </article>
 
-        <article class="project">
-          <h3>Catchment areas of bicycle-metro transfer trips using bike-sharing data</h3>
-          <p>
-            Investigated spatiotemporal characteristics of bicycle-metro transfer catchment areas around metro stations
-            and explored factors influencing transfer trip density.
-          </p>
-        </article>
+          <article class="project">
+            <h3>Bicycle-metro transfer catchment areas</h3>
+            <p>
+              Investigating spatiotemporal characteristics of bicycle-metro transfer catchment areas
+              around metro stations using bike-sharing data.
+            </p>
+          </article>
 
-        <article class="project">
-          <h3>Association network and spatial interaction analysis based on news reports</h3>
-          <p>
-            Used text mining, jieba word segmentation, TF-IDF, ArcGIS, and Gephi to analyze Huaqiangbei’s influence
-            from international, national, and local perspectives.
-          </p>
-        </article>
+          <article class="project">
+            <h3>Association networks from news reports</h3>
+            <p>
+              Using text mining, jieba word segmentation, TF-IDF, ArcGIS, and Gephi to analyze
+              Huaqiangbei’s influence from multiple spatial scales.
+            </p>
+          </article>
 
-        <article class="project">
-          <h3>Satellite-based urban noise prediction and hybrid quantum-classical regression</h3>
-          <p>
-            Ongoing research on visual urban sensing, spatial validation, and fair benchmarking of hybrid
-            quantum-classical regression methods for small-sample urban environmental prediction.
-          </p>
-        </article>
+          <article class="project wide">
+            <h3>Satellite-based urban noise prediction and hybrid quantum-classical regression</h3>
+            <p>
+              Ongoing research on visual urban sensing, spatial validation, and fair benchmarking of hybrid
+              quantum-classical regression methods for small-sample urban environmental prediction.
+            </p>
+          </article>
+        </div>
       </section>
 
       <section id="presentations" class="section">
-        <h2>Presentations &amp; intellectual property</h2>
-        <ul>
+        <div class="section-heading">
+          <p class="eyebrow">Activities</p>
+          <h2>Presentations &amp; intellectual property</h2>
+        </div>
+
+        <ul class="soft-list">
           <li>
             <strong>Where is Huaqiangbei? A vague scope study of urban business district based on the retrieved results of POIs.</strong>
             GSCS &amp; ICUI 2023, Hong Kong, August 20–23, 2023.
@@ -255,32 +310,40 @@
       </section>
 
       <section id="awards" class="section">
-        <h2>Selected awards and honors</h2>
+        <div class="section-heading">
+          <p class="eyebrow">Awards</p>
+          <h2>Selected awards and honors</h2>
+        </div>
+
         <ul class="award-list">
-          <li><span>2024</span> Postgraduate National Scholarship</li>
-          <li><span>2023</span> First Prize, 2023 GeoScene GIS Contest, Principal Investigator</li>
-          <li><span>2023</span> First Prize, 7th Planning Decision Support Model Design Contest, Principal Investigator</li>
-          <li><span>2023</span> Top-grade Graduate Student Academic Scholarship</li>
-          <li><span>2022</span> Excellent Graduate of Hunan Province</li>
-          <li><span>2020</span> Undergraduate National Scholarship</li>
-          <li><span>2020</span> Second Prize, 13th Chinese Collegiate Computing Competition, Principal Investigator</li>
-          <li><span>2020</span> National Higher Education Students Rural Planning Competition Best Work Award, Principal Investigator</li>
+          <li><span>2024</span> <p>Postgraduate National Scholarship</p></li>
+          <li><span>2023</span> <p>First Prize, 2023 GeoScene GIS Contest, Principal Investigator</p></li>
+          <li><span>2023</span> <p>First Prize, 7th Planning Decision Support Model Design Contest, Principal Investigator</p></li>
+          <li><span>2023</span> <p>Top-grade Graduate Student Academic Scholarship</p></li>
+          <li><span>2022</span> <p>Excellent Graduate of Hunan Province</p></li>
+          <li><span>2020</span> <p>Undergraduate National Scholarship</p></li>
+          <li><span>2020</span> <p>Second Prize, 13th Chinese Collegiate Computing Competition, Principal Investigator</p></li>
+          <li><span>2020</span> <p>National Higher Education Students Rural Planning Competition Best Work Award, Principal Investigator</p></li>
         </ul>
       </section>
 
       <section id="skills" class="section">
-        <h2>Skills</h2>
-        <p>
-          <strong>Programming:</strong> Python, SQL<br />
-          <strong>GIS and spatial analysis:</strong> ArcGIS, DepthmapX<br />
-          <strong>Data analysis and visualization:</strong> SPSS, Gephi<br />
-          <strong>Design tools:</strong> Photoshop, Illustrator, InDesign<br />
-          <strong>Research methods:</strong> spatial analysis, text mining, machine learning, urban big data analytics, social sensing
-        </p>
+        <div class="section-heading">
+          <p class="eyebrow">Toolkit</p>
+          <h2>Skills</h2>
+        </div>
+
+        <div class="skill-groups">
+          <div><strong>Programming</strong><span>Python · SQL</span></div>
+          <div><strong>GIS &amp; spatial analysis</strong><span>ArcGIS · DepthmapX</span></div>
+          <div><strong>Data visualization</strong><span>SPSS · Gephi</span></div>
+          <div><strong>Design</strong><span>Photoshop · Illustrator · InDesign</span></div>
+          <div><strong>Methods</strong><span>Spatial analysis · Text mining · Machine learning · Social sensing</span></div>
+        </div>
       </section>
 
       <footer class="footer">
-        <p>© 2026 Yunfei Ma. Last updated for mayunfei25.github.io.</p>
+        <p>© 2026 Yunfei Ma. Built with curiosity for cities, data, and spatial intelligence.</p>
       </footer>
     </main>
   </div>

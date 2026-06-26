@@ -68,7 +68,7 @@ function makeCss(x, y, scale) {
 
 function getSavedCrop() {
   try {
-    const saved = JSON.parse(localStorage.getItem("portraitCropRealtimeV5"));
+    const saved = JSON.parse(localStorage.getItem("portraitCropRealtimeV6"));
     if (!saved) return defaultCrop;
     return {
       x: Number(saved.x ?? defaultCrop.x),
@@ -100,7 +100,7 @@ function applyCrop(x, y, scale, save = true) {
   output.value = makeCss(x, y, scale);
 
   if (save) {
-    localStorage.setItem("portraitCropRealtimeV5", JSON.stringify({ x, y, scale: Number(scale) }));
+    localStorage.setItem("portraitCropRealtimeV6", JSON.stringify({ x, y, scale: Number(scale) }));
   }
 }
 
@@ -176,7 +176,7 @@ if (frame) {
 }
 
 resetButton.addEventListener("click", () => {
-  localStorage.removeItem("portraitCropRealtimeV5");
+  localStorage.removeItem("portraitCropRealtimeV6");
   applyCrop(defaultCrop.x, defaultCrop.y, defaultCrop.scale, false);
 });
 
