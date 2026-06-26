@@ -1,0 +1,314 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #222222;
+  --muted: #666666;
+  --light: #f7f7f7;
+  --line: #dddddd;
+  --link: #2a5db0;
+  --link-hover: #123f7a;
+  --sidebar: #fafafa;
+  --accent-bg: #f2f6ff;
+  --accent-line: #cddbf7;
+  --max-width: 1180px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.88em;
+  background: #f0f0f0;
+  padding: 0.08rem 0.25rem;
+  border-radius: 4px;
+}
+
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 295px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  border-right: 1px solid var(--line);
+  background: var(--sidebar);
+  padding: 46px 30px;
+}
+
+.profile {
+  position: sticky;
+  top: 36px;
+  text-align: center;
+}
+
+.portrait-frame {
+  position: relative;
+  width: 178px;
+  height: 178px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #ffffff;
+}
+
+/*
+  Photo crop controls:
+  1. Upload your photo as assets/profile.jpg.
+  2. If the face is too high/low/left/right, adjust object-position.
+  3. If the photo is too far/close, adjust scale().
+*/
+.portrait {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+
+  /* Crop adjustment area */
+  object-position: 50% 38%;
+  transform: scale(1.10);
+  transform-origin: 50% 38%;
+}
+
+.portrait-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #f2f2f2, #e8e8e8);
+  color: #777777;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.profile h1 {
+  margin: 22px 0 2px;
+  font-size: 1.75rem;
+  line-height: 1.15;
+}
+
+.name-cn {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.role {
+  color: var(--muted);
+  margin: 0 0 22px;
+}
+
+.profile-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  display: inline-block;
+  word-break: break-word;
+}
+
+.profile-list li {
+  margin: 8px 0;
+  color: var(--muted);
+}
+
+.photo-note {
+  margin: 22px auto 0;
+  max-width: 210px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.content {
+  padding: 38px 54px 60px;
+  max-width: 880px;
+}
+
+.topnav {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.topnav a {
+  color: var(--muted);
+}
+
+.topnav a:hover {
+  color: var(--text);
+}
+
+.section {
+  padding: 24px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section h2 {
+  margin: 0 0 18px;
+  font-size: 1.72rem;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.section h3 {
+  margin: 0 0 5px;
+  font-size: 1.12rem;
+  line-height: 1.35;
+}
+
+.section p {
+  margin: 0 0 13px;
+}
+
+.muted,
+.authors,
+.venue,
+.entry-date {
+  color: var(--muted);
+}
+
+ul {
+  padding-left: 22px;
+  margin-top: 0;
+}
+
+li {
+  margin: 7px 0;
+}
+
+.news-list,
+.award-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.news-list li,
+.award-list li {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 16px;
+}
+
+.news-list span,
+.award-list span {
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.interest-grid div {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  background: #ffffff;
+}
+
+.interest-grid p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  margin: 18px 0;
+}
+
+.project,
+.publication {
+  margin: 22px 0 26px;
+}
+
+.publication.featured {
+  border: 1px solid var(--accent-line);
+  background: var(--accent-bg);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.links {
+  font-size: 0.95rem;
+}
+
+.footer {
+  padding-top: 26px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 860px) {
+  .page {
+    display: block;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 28px 22px;
+  }
+
+  .profile {
+    position: static;
+  }
+
+  .profile-list {
+    text-align: center;
+  }
+
+  .content {
+    padding: 28px 22px 48px;
+    max-width: none;
+  }
+
+  .entry,
+  .news-list li,
+  .award-list li {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .interest-grid {
+    grid-template-columns: 1fr;
+  }
+}
