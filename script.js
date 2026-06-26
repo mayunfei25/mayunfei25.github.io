@@ -68,7 +68,7 @@ function makeCss(x, y, scale) {
 
 function getSavedCrop() {
   try {
-    const saved = JSON.parse(localStorage.getItem("portraitCropPlainV7"));
+    const saved = JSON.parse(localStorage.getItem("portraitCropBFSoftBlueV8"));
     if (!saved) return defaultCrop;
     return {
       x: Number(saved.x ?? defaultCrop.x),
@@ -100,7 +100,7 @@ function applyCrop(x, y, scale, save = true) {
   output.value = makeCss(x, y, scale);
 
   if (save) {
-    localStorage.setItem("portraitCropPlainV7", JSON.stringify({ x, y, scale: Number(scale) }));
+    localStorage.setItem("portraitCropBFSoftBlueV8", JSON.stringify({ x, y, scale: Number(scale) }));
   }
 }
 
@@ -176,7 +176,7 @@ if (frame) {
 }
 
 resetButton.addEventListener("click", () => {
-  localStorage.removeItem("portraitCropPlainV7");
+  localStorage.removeItem("portraitCropBFSoftBlueV8");
   applyCrop(defaultCrop.x, defaultCrop.y, defaultCrop.scale, false);
 });
 
