@@ -15,6 +15,14 @@
   --shadow: 0 16px 42px rgba(30, 64, 175, 0.07);
   --max-width: 1240px;
 
+  /* Easy layout controls: change only these numbers if you want to tune the page. */
+  --sidebar-width: 320px;
+  --content-width: 900px;
+  --sidebar-list-width: 210px;
+  --hero-title-size: clamp(2.55rem, 5vw, 4.25rem);
+  --cn-hero-title-size: clamp(2.05rem, 3.25vw, 2.8rem);
+  --body-line-height: 1.66;
+
   /*
     Portrait crop variables.
     Your current preferred values are saved here.
@@ -42,7 +50,7 @@ body {
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 16px;
-  line-height: 1.66;
+  line-height: var(--body-line-height);
 }
 
 a {
@@ -68,7 +76,7 @@ code {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   min-height: 100vh;
 }
 
@@ -191,13 +199,19 @@ code {
   padding: 0;
   margin: 0;
   text-align: left;
-  display: inline-block;
-  word-break: break-word;
+  display: block;
+  width: 100%;
+  max-width: var(--sidebar-list-width);
+  margin: 0 auto;
 }
 
 .profile-list li {
   margin: 8px 0;
   color: var(--muted);
+}
+
+.profile-list a {
+  overflow-wrap: anywhere;
 }
 
 .photo-note {
@@ -210,7 +224,7 @@ code {
 
 .content {
   padding: 38px 54px 60px;
-  max-width: 900px;
+  max-width: var(--content-width);
 }
 
 .topnav {
@@ -605,7 +619,7 @@ body.zh {
 
 .zh .intro-section h2 {
   max-width: 820px;
-  font-size: clamp(2.05rem, 3.25vw, 2.8rem);
+  font-size: var(--cn-hero-title-size);
   line-height: 1.16;
   font-weight: 800;
   margin-bottom: 20px;
@@ -629,7 +643,7 @@ body.zh {
 .zh .profile-list {
   display: block;
   width: 100%;
-  max-width: 236px;
+  max-width: var(--sidebar-list-width);
   margin: 0 auto;
   font-size: 0.94rem;
   line-height: 1.65;
@@ -683,3 +697,6 @@ body.zh {
     justify-content: center;
   }
 }
+
+/* Hide public edit hints; crop editor still opens with ?edit=1. */
+.photo-note { display: none !important; }
