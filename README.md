@@ -29,3 +29,8 @@ Open `https://mayunfei25.github.io/?edit=1` to adjust the portrait crop. The cur
   --portrait-scale: 1.09;
 }
 ```
+
+
+## v10 update
+
+Chinese layout refined: CJK-first font stack, smaller Chinese hero heading, cleaner language links, wider sidebar, and improved Chinese spacing.

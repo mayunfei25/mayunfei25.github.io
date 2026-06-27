@@ -34,7 +34,6 @@
           <li>🌐 <a href="https://mayunfei25.github.io/">mayunfei25.github.io</a></li>
           <li>🔗 <a href="https://scholar.google.com/citations?hl=en&user=dMgCi0IAAAAJ">Google Scholar</a></li>
           <li>💻 <a href="https://github.com/mayunfei25">GitHub</a></li>
-          <li>English <a href="index.html">English Homepage</a></li>
         </ul>
 
         <p class="photo-note">打开 <code>?edit=1</code> 可以调整头像裁剪。</p>
@@ -59,7 +58,7 @@
 
       <section id="about" class="section intro-section">
         <p class="eyebrow">学术主页</p>
-        <h2>计算城市科学、GeoAI 与健康城市环境。</h2>
+        <h2>计算城市科学 · GeoAI · 健康城市环境</h2>
         <p class="identity-line">清华大学深圳国际研究生院未来人居研究院博士研究生</p>
         <div class="interests-line">
           <span>计算城市科学</span>
@@ -238,41 +237,41 @@
 
   <div id="cropEditor" class="crop-editor" aria-live="polite">
     <div class="crop-editor-header">
-      <strong>Realtime portrait editor</strong>
+      <strong>头像裁剪编辑器</strong>
       <button type="button" id="closeCropEditor" aria-label="Close editor">×</button>
     </div>
 
     <p class="crop-editor-help">
-      Drag the portrait directly. Use the mouse wheel or slider to zoom.
+      可以直接拖动头像，也可以用滑轮或滑块缩放。
     </p>
 
     <label>
-      Move X
+      横向
       <input id="cropX" type="range" min="-220" max="220" step="1" value="2" />
       <span id="cropXValue">2px</span>
     </label>
 
     <label>
-      Move Y
+      纵向
       <input id="cropY" type="range" min="-220" max="220" step="1" value="-7" />
       <span id="cropYValue">-7px</span>
     </label>
 
     <label>
-      Zoom
+      缩放
       <input id="cropScale" type="range" min="1" max="3" step="0.01" value="1.09" />
       <span id="cropScaleValue">1.09</span>
     </label>
 
     <div class="crop-editor-actions">
-      <button type="button" id="copyCropCss">Copy final CSS</button>
-      <button type="button" id="resetCrop">Reset</button>
+      <button type="button" id="copyCropCss">复制 CSS</button>
+      <button type="button" id="resetCrop">重置</button>
     </div>
 
     <textarea id="cropCssOutput" readonly></textarea>
 
     <p class="crop-editor-help small">
-      Paste the copied variables into the <code>:root</code> block in <code>styles.css</code>, then commit.
+      把复制的变量粘贴到 <code>styles.css</code> 的 <code>:root</code> 中，然后提交。
     </p>
   </div>
 
